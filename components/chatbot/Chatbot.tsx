@@ -115,12 +115,10 @@ const FloatingChatbot = () => {
     return (
       <ReactMarkdown
         components={{
-          strong: ({ children, ...props }) => (
-            <span className="font-bold" {...props}>
-              {children}
-            </span>
+          strong: (props) => (
+            <span className="font-bold" {...props} />
           ),
-          p: ({ children, ...props }) => <span {...props}>{children}</span>,
+          p: (props) => <span {...props} />,
         }}
       >
         {displayText}
@@ -142,12 +140,10 @@ const FloatingChatbot = () => {
     const MarkdownContent = ({ content }: { content: string }) => (
       <ReactMarkdown
         components={{
-          strong: ({ children, ...props }) => (
-            <span className="font-bold" {...props}>
-              {children}
-            </span>
+          strong: ({ ...props }) => (
+            <span className="font-bold" {...props} />
           ),
-          p: ({ children, ...props }) => <span {...props}>{children}</span>,
+          p: ({ ...props }) => <span {...props} />
         }}
       >
         {content}
