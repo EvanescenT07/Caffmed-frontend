@@ -63,7 +63,7 @@ const Detection = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/predict",
+        process.env.NEXT_PUBLIC_MODEL_ENDPOINT_URL!,
         formData,
         {
           headers: {
